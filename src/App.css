@@ -1,0 +1,194 @@
+@import url(https://fonts.googleapis.com/css?family=Quicksand:300,regular,500,600,700);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  font-family: "QuickSand", sans-serif;
+}
+
+.appHead {
+  font-size: 5rem;
+  text-align: center;
+  margin: 5rem;
+}
+
+#drum-machine {
+  background-color: #131937;
+  max-width: 60%;
+  padding: 5rem;
+  border-radius: 5rem;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.drumsGrid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 3rem;
+  justify-content: left;
+  align-items: center;
+}
+
+.drum-pad {
+  border: none;
+  outline: none;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.active {
+  background-color: #ff823c;
+}
+
+.drum-pad:disabled {
+  background-color: white;
+}
+
+label {
+  font-size: 4rem;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.consoleDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.powerToggle {
+  background-color: white;
+  position: relative;
+  width: 5rem;
+  height: 2.5rem;
+  -webkit-appearance: none;
+  border-radius: 2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.powerToggle::after {
+  content: "";
+  position: absolute;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: #6de5ff;
+  transform: scale(1.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.powerToggle:checked::after {
+  transform: scale(1.2) translateX(2.5rem);
+}
+
+.powerToggle:checked {
+  background-color: #ff823c;
+}
+
+#display {
+  width: 30rem;
+  height: 5rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  color: black;
+  background-color: white;
+  border-radius: 5rem;
+}
+
+.volDiv {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.volumeBar {
+  -webkit-appearance: none;
+}
+
+.volumeBar:focus {
+  outline: none;
+}
+
+.volumeBar::-webkit-slider-runnable-track {
+  width: 5rem;
+  height: 0.2rem;
+  background-color: #6de5ff;
+  border-radius: 0.2rem;
+}
+
+.volumeBar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+.volumeBar::-webkit-slider-thumb {
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  background-color: #ff823c;
+  border-radius: 50%;
+  margin-top: -0.9rem;
+}
+
+/*Responsive at 1440px START*/
+@media (max-width: 1440px) {
+  * {
+    font-size: 8px;
+  }
+}
+/*Responsive at 1440px END*/
+
+/*Responsive at 1024px START*/
+@media (max-width: 1024px) {
+  * {
+    font-size: 6px;
+  }
+}
+/*Responsive at 1024px END*/
+
+/*Responsive at 768px START*/
+@media (max-width: 768px) {
+  * {
+    font-size: 5px;
+  }
+
+  .consoleDiv {
+    margin: 5rem auto;
+    width: 100%;
+  }
+
+  #drum-machine {
+    flex-direction: column;
+  }
+
+  #display {
+    margin: 5rem auto;
+  }
+
+  .drumsGrid {
+    justify-content: center;
+  }
+}
+/*Responsive at 768px END*/
+
+/*Responsive at 480px START*/
+@media (max-width: 480px) {
+  * {
+    font-size: 4px;
+  }
+}
