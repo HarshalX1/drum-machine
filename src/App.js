@@ -1,60 +1,60 @@
-import React, { Component } from "react";
-import "./App.css";
+import React, { Component } from 'react';
+import './App.css';
 
 const drumSounds = [
   {
     keyCode: 81,
-    keyTrigger: "Q",
-    id: "Heater-1",
-    url: "https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3",
+    keyTrigger: 'Q',
+    id: 'Heater-1',
+    url: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3',
   },
   {
     keyCode: 87,
-    keyTrigger: "W",
-    id: "Heater-2",
-    url: "https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3",
+    keyTrigger: 'W',
+    id: 'Heater-2',
+    url: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3',
   },
   {
     keyCode: 69,
-    keyTrigger: "E",
-    id: "Heater-3",
-    url: "https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3",
+    keyTrigger: 'E',
+    id: 'Heater-3',
+    url: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3',
   },
   {
     keyCode: 65,
-    keyTrigger: "A",
-    id: "Heater-4",
-    url: "https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3",
+    keyTrigger: 'A',
+    id: 'Heater-4',
+    url: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3',
   },
   {
     keyCode: 83,
-    keyTrigger: "S",
-    id: "Clap",
-    url: "https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3",
+    keyTrigger: 'S',
+    id: 'Clap',
+    url: 'https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3',
   },
   {
     keyCode: 68,
-    keyTrigger: "D",
-    id: "Open-HH",
-    url: "https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3",
+    keyTrigger: 'D',
+    id: 'Open-HH',
+    url: 'https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3',
   },
   {
     keyCode: 90,
-    keyTrigger: "Z",
+    keyTrigger: 'Z',
     id: "Kick-n'-Hat",
-    url: "https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3",
+    url: 'https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3',
   },
   {
     keyCode: 88,
-    keyTrigger: "X",
-    id: "Kick",
-    url: "https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3",
+    keyTrigger: 'X',
+    id: 'Kick',
+    url: 'https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3',
   },
   {
     keyCode: 67,
-    keyTrigger: "C",
-    id: "Closed-HH",
-    url: "https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3",
+    keyTrigger: 'C',
+    id: 'Closed-HH',
+    url: 'https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3',
   },
 ];
 
@@ -92,7 +92,7 @@ class App extends Component {
 
   volControl(event) {
     this.setState({
-      display: "Volume: " + Math.round(event.target.value * 100),
+      display: 'Volume: ' + Math.round(event.target.value * 100),
       volume: event.target.value,
     });
     setTimeout(() => {
@@ -143,7 +143,7 @@ class DrumPad extends Component {
     super(props);
 
     this.state = {
-      btnPress: "#6de5ff",
+      btnPress: '#6de5ff',
     };
 
     this.playSound = this.playSound.bind(this);
@@ -151,11 +151,11 @@ class DrumPad extends Component {
   }
 
   componentDidMount() {
-    document.addEventListener("keydown", this.handleKeyPress);
+    document.addEventListener('keydown', this.handleKeyPress);
   }
 
   componentWillMount() {
-    document.removeEventListener("keydown", this.handleKeyPress);
+    document.removeEventListener('keydown', this.handleKeyPress);
   }
 
   handleKeyPress(event) {
@@ -172,12 +172,12 @@ class DrumPad extends Component {
     audioTag.play();
 
     this.setState({
-      btnPress: "#ff823c",
+      btnPress: '#ff823c',
     });
 
     setTimeout(() => {
       this.setState({
-        btnPress: "#6de5ff",
+        btnPress: '#6de5ff',
       });
     }, 350);
   }
